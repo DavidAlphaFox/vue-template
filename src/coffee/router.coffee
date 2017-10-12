@@ -1,11 +1,21 @@
 Vue         = require "vue"
 VueRouter   = require "vue-router"
+Vuex        = require "vuex"
 
 Home        = require "../vue/Home.vue"
 Contact     = require "../vue/Contact.vue"
 NotFound    = require "../vue/404.vue"
 
 Vue.use VueRouter
+Vue.use Vuex
+
+store = new Vuex.Store()
+
+store.registerModule 'vuex',
+  state: {}
+  mutations: {}
+  actions: {}
+
 
 HomeRoute =
     path: "/"
@@ -19,7 +29,8 @@ DefaultRoute =
     path: "*"
     component: NotFound
 
-mode = "history"
+#mode = "history"
+mode = "hash"
 
 routes = [ HomeRoute, ContactRoute, DefaultRoute ]
 
