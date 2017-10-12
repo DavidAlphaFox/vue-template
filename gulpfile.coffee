@@ -29,11 +29,26 @@ gulp.task "html", ->
 
   gulp.src "./src/*.html"
       .pipe gulpRemoveHtml() #清除特定标签
+<<<<<<< HEAD
       .pipe removeEmptyLines(removeComments: false) #清除空白行
       .pipe htmlmin options
       .pipe gulp.dest "./dist/"
       .pipe browserSync.stream()
 
+=======
+      .pipe removeEmptyLines({removeComments: true}) #清除空白行
+      .pipe htmlmin(options)
+      .pipe gulp.dest "./dist/"
+      .pipe browserSync.stream()
+
+gulp.task "pug", ->
+    gulp.src "./src/index.pug"
+        .pipe plumber()
+        .pipe pug()
+        .pipe gulp.dest "./dist/"
+        .pipe browserSync.stream()
+
+>>>>>>> fdc6172fce07bc879338251aefc5b9040cf3d40e
 gulp.task "manifest", ->
     gulp.src "./src/manifest.json"
         .pipe plumber()
