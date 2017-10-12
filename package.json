@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Minimalist Vue template for Web developers",
   "scripts": {
-<<<<<<< HEAD
-=======
-    "install": "coffee install.coffee",
->>>>>>> fdc6172fce07bc879338251aefc5b9040cf3d40e
     "build": "cross-env NODE_ENV=development gulp --development",
     "start": "cross-env NODE_ENV=development gulp watch --development",
     "production": "cross-env NODE_ENV=production gulp --production"
