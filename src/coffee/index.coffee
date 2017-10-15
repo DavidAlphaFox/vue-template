@@ -1,7 +1,8 @@
 Vue         = require "./router.coffee"
 App         = require "../vue/App.vue"
 
-
+#import Vue from "./router.coffee"
+#import App from "../vue/App.vue"
 
 window.addEventListener "load", ->
     document.body.style.margin = 0

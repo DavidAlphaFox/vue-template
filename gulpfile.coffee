@@ -1,6 +1,5 @@
 gulp            = require "gulp"
 plumber         = require "gulp-plumber"
-pug             = require "gulp-pug"
 sass            = require "gulp-sass"
 autoprefixer    = require "gulp-autoprefixer"
 cleancss        = require "gulp-clean-css"
@@ -51,7 +50,10 @@ gulp.task "sass", ->
         .pipe browserSync.stream()
 
 gulp.task "coffee", ->
-    browserify "./src/coffee/index.coffee"
+    opts =
+      debug: true
+      entries: ["./src/coffee/index.coffee"]
+    browserify opts
         .bundle()
         .pipe plumber()
         .pipe source "index.js"
